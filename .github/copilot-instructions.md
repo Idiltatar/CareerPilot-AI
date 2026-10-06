@@ -30,6 +30,7 @@ At the start of work in this repository, read `README.md` and `PLAN.md`. Treat `
 ## Accuracy and scope
 
 - Do not describe seeded sample records as real applications.
-- Do not describe interview feedback as AI-powered or externally integrated until an LLM provider is implemented and tested.
+- Do not describe interview feedback as live AI-powered until a provider is configured and the live integration has been verified.
 - Keep changes scoped to CareerPilot and preserve existing user data and unrequested files.
-- The current next milestone is accessibility/mobile browser verification, then CI, logging, backups, and production readiness. Multi-user ownership and production security are required before public deployment. See `PLAN.md` before choosing follow-up work.
+- A GitHub Actions workflow now runs backend tests, frontend tests, and the frontend production build on pushes and pull requests to `main`.
+- Mobile width checks have passed for the dashboard and interview practice. The next milestone is a live provider test, followed by a full keyboard/screen-reader audit and production readiness. Multi-user ownership and production security are required before public deployment. See `PLAN.md` before choosing follow-up work.
