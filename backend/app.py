@@ -160,6 +160,18 @@ def create_app(config=None):
                     f"ALTER TABLE application ADD COLUMN {column_name} {column_definition}"
                 ))
         db.session.commit()
+        synthetic_responders = Application.query.filter(
+            Application.notes == "Synthetic portfolio example",
+            Application.stage.notin_(("Saved", "Applied")),
+            Application.responded_date.is_(None),
+        ).all()
+        for application in synthetic_responders:
+            application.responded_date = min(
+                date.today(),
+                application.applied_date + timedelta(days=3 + application.id % 12),
+            )
+        if synthetic_responders:
+            db.session.commit()
         if app.config["SEED_DEMO_DATA"]:
             seed_data()
 

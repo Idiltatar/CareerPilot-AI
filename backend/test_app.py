@@ -227,6 +227,20 @@ def test_analytics_reports_real_response_and_stage_metrics(client):
     ]
 
 
+def test_seeded_analytics_response_rate_matches_dashboard():
+    app = create_app({
+        "TESTING": True,
+        "SQLALCHEMY_DATABASE_URI": "sqlite://",
+        "SEED_DEMO_DATA": True,
+    })
+    with app.test_client() as client:
+        dashboard = client.get("/api/dashboard").json
+        analytics = client.get("/api/analytics?days=180").json
+
+    assert dashboard["metrics"]["response_rate"] == analytics["response_rate"]
+    assert analytics["average_response_days"] is not None
+
+
 @pytest.mark.parametrize("days", ["0", "31", "many"])
 def test_analytics_rejects_unsupported_windows(client, days):
     response = client.get(f"/api/analytics?days={days}")
