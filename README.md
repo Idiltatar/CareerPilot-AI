@@ -35,6 +35,18 @@ To run the frontend without Docker, use `cd frontend && npm install && npm run d
 - OpenAI-compatible interview feedback when configured; otherwise clearly labeled local-demo feedback
 - Practice answers are sent for feedback but are not retained
 
+## Screenshots
+
+The screenshots below show the responsive mobile dashboard and interview-practice workflow.
+
+### Dashboard
+
+![CareerPilot dashboard on a mobile viewport](docs/screenshots/careerpilot-dashboard.png)
+
+### Interview practice
+
+![CareerPilot interview practice on a mobile viewport](docs/screenshots/careerpilot-interview-practice.png)
+
 Run checks with `docker compose run --rm api pytest -q` and `cd frontend && npm test && npm run build`.
 
 See [PLAN.md](PLAN.md) for remaining work. Seeded companies and application histories are synthetic, not real job applications. Before public deployment, configure TLS, production secrets, multi-user ownership, migrations, logging, backups, and deployment settings.

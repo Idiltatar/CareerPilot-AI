@@ -56,7 +56,9 @@
 .answer-timer>span{font-variant-numeric:tabular-nums;font-size:18px;font-weight:700;color:#3d6544}
 .answer-timer>div{display:flex;gap:6px}
 .practice-privacy{margin:8px 0 0;color:#7d847c;font-size:9px;line-height:1.5}
+.activity-panel{height:auto;min-height:246px}
+.activity-panel .chart-area{height:145px;min-height:145px}
 @media(max-width:850px){.analytics-heading{display:grid}.analytics-filters{justify-content:flex-start;max-width:100%}}
-@media(max-width:600px){.tasks-page{padding:22px 14px}.practice-setup{grid-template-columns:1fr}}
+@media(max-width:600px){.tasks-page{padding:22px 14px}.practice-setup{grid-template-columns:1fr}.activity-panel{height:auto;min-height:0}.activity-panel .chart-area{height:150px;min-height:150px}}
 @media(max-width:850px){.practice-page{padding:28px 22px}.practice-layout{grid-template-columns:1fr}.practice-aside{display:none}}
 @media(max-width:600px){.api-error{margin:10px 14px 0}.practice-page{padding:22px 14px}.practice-heading{align-items:flex-start;flex-direction:column;gap:12px}.practice-heading h1{font-size:23px}.practice-panel{padding:16px}.practice-actions{flex-wrap:wrap}.practice-actions button{flex:1;justify-content:center}}
